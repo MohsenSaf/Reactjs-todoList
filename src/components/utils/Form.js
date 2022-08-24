@@ -1,33 +1,31 @@
-import { Button as AntButton, Form as AntForm, Input as AntInput } from 'antd'
+import { Button as AntButton, Form, Input as AntInput } from 'antd'
 import React from 'react'
 
-export default  function Form (layout = 'inline') {
-  const [form] = AntForm.useForm()
+export default function From (layout = 'inline') {
   return (
-    <AntForm
+    <Form
       layout={layout}
-      form={form}
       initialValues={{
-        layout:layout
+        layout: layout
       }}
-    ></AntForm>
+    ></Form>
   )
 }
 
 export function Input (lable) {
   return (
-    <AntForm.Item label={lable}>
+    <Form.Item label={lable}>
       <AntInput />
-    </AntForm.Item>
+    </Form.Item>
   )
 }
 
 export function Button (buttonLable, type = 'primary', loading, onClick) {
   return (
-    <AntForm.Item>
+    <Form.Item>
       <AntButton type={type} onClick={onClick} loading={loading}>
         {buttonLable}
       </AntButton>
-    </AntForm.Item>
+    </Form.Item>
   )
 }
