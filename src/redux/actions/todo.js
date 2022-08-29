@@ -1,12 +1,11 @@
-export function addTodo (payload) {
-    return {
-      type: 'Todo',
-      payload
-    }
+export function addTodo() {
+  return (dispatch) => {
+    dispatch({ type: 'ADD_TODO', payload: task })
   }
-
-export const removeTodo = id => (dispatch, getState) => {
-    const { toods } = getState()
-    const newTodos = toods.fiter(person => person.id !== id)
-    dispatch(setTodos(newTodos))
 }
+
+
+export const removePerson = id => (dispatch) => {
+  dispatch({ type: 'REMOVE_TODO', payload: id })
+}
+

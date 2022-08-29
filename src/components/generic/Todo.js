@@ -1,16 +1,8 @@
-import { useState } from 'react'
-import Form, { Input, Button } from '../utils/Form'
+import React from 'react'
+import New from '../todo/New'
 
-export default function Todo () {
-  const [loading, setLoading] = useState(false)
-
+export default function Todo() {
   return (
-    <div>
-      <Form>
-        <Input lable='افزودن' />
-        <Button loading={loading}>افزودن</Button>
-      </Form>
-
-    </div>
+    <div><New/></div>
   )
 }
