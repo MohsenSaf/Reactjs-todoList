@@ -1,6 +1,6 @@
-import todos from './todos'
+import { todos, todo,task } from './todos'
 import { combineReducers } from 'redux'
 
-const reducer = combineReducers({ todos })
+const reducer = combineReducers({ todo, todos,task })
 
 export default reducer

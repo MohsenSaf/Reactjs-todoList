@@ -1,10 +1,31 @@
-export default function todos (state = [], action) {
+export function todo (state = {}, action) {
   switch (action.type) {
     case 'ADD_TODO':
-      return [...state, { title: action.payload, id: todos.length ? todos[todos.length - 1].id + 1 : 1 }]
+      return action.payload
 
     case 'REMOVE_TODO':
-      return state.filter(todo => todo.id !== action.payload)
+      return action.payload
+
+    default:
+      return state
+  }
+}
+
+export function todos (state = [], action) {
+  switch (action.type) {
+    case 'TODOS':
+      return action.payload
+
+    default:
+      return state
+  }
+}
+
+export function task (state = [], action) {
+  switch (action.type) {
+    case 'TASK':
+      return action.payload
+
     default:
       return state
   }

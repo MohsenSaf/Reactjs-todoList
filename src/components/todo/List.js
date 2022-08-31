@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { DeleteTwoTone, EditTwoTone } from '@ant-design/icons'
-import { Connect } from 'react-redux'
+import { connect } from 'react-redux'
+import { removeTodo } from '../../redux/actions/todo'
 
- export default function List () {
+export default function List () {
   return (
     <div>
-      {/* <>
       <ol>
-        {todos.map(todo => (
-          <li key={todo.id}>
-            {todo.title}
+          <li >
+            {/* {this.props} */}
             <span
-              // onClick={() => removeTodo(todo.id)}
+              // onClick={() => removeTodo(this.props.id)}
               style={{ margin: '10px', cursor: 'pointer' }}
             >
               <DeleteTwoTone />
@@ -20,21 +19,7 @@ import { Connect } from 'react-redux'
               <EditTwoTone />
             </span>
           </li>
-        ))}
         </ol>
-        </> */}
-      jh
     </div>
   )
 }
-
-// const mapStateToProps = state => ({
-//   todos: state.todos
-// })
-
-// const mapDispatchToProps = dispatch => ({
-//   getItems: () => dispatch(getPersons()),
-//   removeItem: id => dispatch(removePerson(id))
-// })
-
-// export default connect(mapStateToProps, mapDispatchToProps)(List)
