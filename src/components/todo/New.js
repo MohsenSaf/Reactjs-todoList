@@ -1,14 +1,18 @@
 import { Form, Input, Button } from 'antd'
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTodo , setTask} from '../../redux/actions/todo'
 
 export default function New () {
+  
   const dispatch = useDispatch()
 
   const data = useSelector(state => state.data)
 
   
+  useEffect(() => {
+    localStorage.setItem(`#${data.id} task` , JSON.stringify(data.title) );
+  }, [data]);
 
   return (
     <div>

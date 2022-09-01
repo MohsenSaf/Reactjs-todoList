@@ -1,15 +1,16 @@
+
+
 export const removeTodo = id => (dispatch, getState) => {
-  const { todos } = getState()
-  const newTodos = todos.filter(todo => todo.id !== id)
-  dispatch(setTodos(newTodos))
+  dispatch(setTodos(dispatch({ type: 'REMOVE_TODO', payload: id })))
 }
 
 
-export const addTodo = data =>(dispatch, getState) => {
-  if (!data) 
-    dispatch({ type: 'ADD_TODOS', payload: data })
-  setTask('')
+export const addTodo = task =>(dispatch, getState) => {
+  const { newTask } = getState()
   
+  if (!newTask) 
+    dispatch({ type: 'ADD_TODOS', payload: newTask })
+  setTask('')
 }
 
 export function setTask (payload){
@@ -35,6 +36,3 @@ export function setTodos (payload) {
   }
 }
 
-function getId (todos) {
-  return todos.length ? todos[todos.length - 1].id + 1 : 1
-}

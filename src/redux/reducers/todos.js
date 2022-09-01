@@ -1,10 +1,10 @@
 export function todo (state = {}, action) {
   switch (action.type) {
     case 'ADD_TODO':
-      return action.payload
+      return { title: action.payload, id: getId(state) }
 
     case 'REMOVE_TODO':
-      return action.payload
+      return state.filter(todo => todo.id !== action.payload)
 
     default:
       return state
@@ -21,7 +21,7 @@ export function todos (state = [], action) {
   }
 }
 
-export function task (state = [], action) {
+export function task (state = '', action) {
   switch (action.type) {
     case 'TASK':
       return action.payload
@@ -29,4 +29,8 @@ export function task (state = [], action) {
     default:
       return state
   }
+}
+
+function getId (todos) {
+  return todos.length ? todos[todos.length - 1].id + 1 : 1
 }

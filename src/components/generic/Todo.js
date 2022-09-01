@@ -4,6 +4,6 @@ import List from '../todo/List'
 
 export default function Todo() {
   return (
-    <div><New/> <br/> </div>
+    <div><New/> <br/> <List/> </div>
   )
 }
